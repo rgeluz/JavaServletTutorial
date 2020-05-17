@@ -5,9 +5,11 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 	/**
@@ -49,8 +51,19 @@ public class AddServlet extends HttpServlet{
 		
 		
 		//--REDIRECT APPROACH--//
-		res.sendRedirect("sq?sum="+sum);
+		//notice the query string is appended
+		//res.sendRedirect("sq?sum="+sum);
 		
+		//--HTTP SESSION APPROACH --//
+		//HttpSession session = req.getSession();
+		//session.setAttribute("sum", sum);
+		//res.sendRedirect("sq");
+		
+		//--COOKIE APPROACH --//
+		
+		Cookie cookie = new Cookie("sum", Integer.toString(sum));
+		res.addCookie(cookie);
+		res.sendRedirect("sq");
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) {
