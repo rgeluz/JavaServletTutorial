@@ -11,23 +11,50 @@
   </welcome-file-list> -->
   
   <!-- Add Servlet -->
-  <servlet>
+  <!--  <servlet>
   	<servlet-name>addservlet</servlet-name>
   	<servlet-class>com.gamehub.AddServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>addservlet</servlet-name>
   	<url-pattern>/add</url-pattern>
-  </servlet-mapping>
-  
+  </servlet-mapping> -->
+   
   <!--  Square Servlet -->
-  <servlet>
+  <!--  <servlet>
   	<servlet-name>squareservlet</servlet-name>
   	<servlet-class>com.gamehub.SquareServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>squareservlet</servlet-name>
   	<url-pattern>/sq</url-pattern>
+  </servlet-mapping> -->
+  
+  <!-- MyServlet servlet -->
+  <servlet>
+  	<servlet-name>myservletservlet</servlet-name>
+  	<servlet-class>com.gamehub.MyServlet</servlet-class>
+  	
+  	<!--  Servlet Config -->
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>RomanG</param-value>
+  	</init-param>
+  	
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>myservletservlet</servlet-name>
+  	<url-pattern>/myservlet</url-pattern>
   </servlet-mapping>
+  
+  <!-- Context Parameters -->
+  <context-param>
+  	<param-name>name</param-name>
+  	<param-value>Roman</param-value>
+  </context-param>
+    <context-param>
+  	<param-name>phone</param-name>
+  	<param-value>iPhone</param-value>
+  </context-param>
   
 </web-app>
